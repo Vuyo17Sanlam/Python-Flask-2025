@@ -24,3 +24,8 @@ pip install flask
 - Add `myenv` in `.gitignore`
 - Add the first commit
 - Publish to github repo (Public)
+
+Postman is used for testing (on Get Post, Delete, Put)
+Load testing
+resilence testing
+(Choas monkey is a software that )
