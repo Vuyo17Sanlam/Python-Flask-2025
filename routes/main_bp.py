@@ -36,7 +36,7 @@ users = [
 #  API / Endpoint
 @main_bp.get("/")
 def hello_world():
-    return "<h1>Super, Cool 😁</h1>"
+    return render_template("home.html")
 
 
 # Flask use Jinja2 -> Replace {{}} with python value

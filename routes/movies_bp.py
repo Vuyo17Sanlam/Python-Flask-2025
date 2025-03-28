@@ -1,5 +1,8 @@
-from flask import Blueprint, request
 from pprint import pprint
+
+from flask import Blueprint, request
+
+from models.movie import Movie
 
 movies = [
     {
@@ -103,7 +106,9 @@ movies_bp = Blueprint("movies_bp", __name__)
 @movies_bp.get("/")
 def get_all_movies():
     # Auto converts data -> JSON (Flask)
-    return movies
+    movies = Movie.query.all()
+    movies_dict = [movie.to_dict() for movie in movies]  # List comprehension
+    return movies_dict
 
 
 # /movies/100 - <id> -> Variable
